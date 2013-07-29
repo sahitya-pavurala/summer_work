@@ -1,0 +1,22 @@
+<html style="background-color:rgba(0,0,255,0.1)">
+<head>
+    <title>Search</title>
+</head>
+<body>
+    {% if errors %}
+        <ul>
+           {% for error in errors %}
+           <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+    <form action="/search/" method="get">
+        <h2 style="background-color:rgba(0,0,255,0.4)"> Enter the Run id</h2>
+<form action="/search/" method="get">
+    <textarea name="q" cols="50" rows="10"></textarea></p>
+
+<p><input type="submit" value="Search"</p>
+    </form>
+</body>
+</html>

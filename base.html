@@ -1,0 +1,27 @@
+<html style="background-color:rgba(0,0,255,0.1)" lang = 'en' >
+
+
+<head>
+        <title>
+                {% block title%}{% endblock %}
+        </title>
+</head>
+
+
+<body>
+        <table width = '1700'><tr><td align='center'><h2 style="background-color:rgba(0,0,255,0.4)"> Search results</h2><td><tr></table>
+        <hr width = '1670'align='left'>
+
+
+
+        {% block content %}{% endblock %}
+
+
+        {% block footer %}
+
+        <hr width = '1670'align='left'>
+
+    <p> Thanks. All the Best </p>
+        {% endblock %}
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% block title  %}Search page{% endblock %}
+
+{% block content %}
+<p> You searched for : <strong>{{ input_count }} sample(s) </strong></p>
+<p>{{ inputlist }} </p>
+
+        {% for i in datalist  %}
+        {% if i not in fulldata_list %}
+                <p><img src="data:image/PNG;base64,{{i}}"/></p>
+                <hr>
+        {% else %}
+
+                <table border="1">
+
+                {% for dict in i %}
+                <p>
+                        {% if forloop.first %}
+
+                        <tr><td>{{ 'mouseid' }}</td>
+                                {% for field, value in dict.fields.items %}
+                                <td>{{ field }}</td>
+                                {% endfor %} </tr>
+                        {% endif %}
+                        <tr><td>{{ dict.pk }}</td>
+                                {% for field, value in dict.fields.items %}
+                                <td> {{ value }}</td>
+                                {% endfor %}</tr>
+                </p>
+                {% endfor %}
+                </table>
+
+
+
+
+        {% endif %}
+        {% endfor %}
+
+{% for i in invalidlist %}
+<p>{{ i }}<strong style="color: FF0000 " > :  is not a valid mouse id</strong></p>
+{% endfor %}
+
+
+
+
+{% endblock %}
