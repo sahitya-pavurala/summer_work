@@ -31,3 +31,7 @@ class Mice(models.Model):
     genotype_med = models.CharField(max_length=100L, blank=True)
     class Meta:
         db_table = 'mice'
+
+
+
+# hello
